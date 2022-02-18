@@ -6,21 +6,18 @@ def sales_reports(log_file):#a function
         line = line.rstrip()#stripping the blank spaces
         day = line[0:3]#selecting first 3 letters of the line
         
-
         if day == "Mon":#choosing the day to display
             print(line)#displaying response to the console.
     log_file.seek(0,0)
 
 def melon_lord(log_file):
     
-    melon_orders = []
     for line in log_file:
         line = line.rstrip()
         split = line.split(' ')
         if float(split[2]) >=10:
             print(line)
-            # melon_orders.append(line)
-    
+    log_file.seek(0,0)
 
 sales_reports(log_file)#invoking function
 melon_lord(log_file)
